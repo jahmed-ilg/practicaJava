@@ -2,12 +2,20 @@ package cat.ilg;
 
 public class Professor extends Persona {
 
-    protected double sou = 0.0;
+    private double sou = 0.0;
+
+    public double getSou() {
+        return sou;
+    }
+
+    public void setSou(double sou) {
+        this.sou = sou;
+    }
 
     public Professor(){};
 
     public Professor (String nom){
-        this.nom = nom;
+        setNom(nom);
         }
 
     public void canviarSou(double nouSou){
@@ -24,16 +32,16 @@ public class Professor extends Persona {
 
     @Override
     public  String obtenirDades(){
-        String check = "";
+        String toReturn = "";
         try {
-            if ( dni == null || nom ==  null ){
+            if ( this.getDni() == null || this.getNom() ==  null ){
                 throw new Exception("Error: Faltan Datos para Introducir");
             } else {
-                check = "Persona amb nom : " + this.nom + " i DNI " + this.dni + " (PROFE amb sou : " + String.format("%.3f",this.sou) + " )";
+                toReturn = "Persona amb nom : " + this.getNom() + " i DNI " + this.getDni() + " (PROFE amb sou : " + String.format("%.3f",this.sou) + " )";
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return check ;
+        return toReturn ;
     }
 }

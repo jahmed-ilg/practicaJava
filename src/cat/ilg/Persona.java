@@ -2,20 +2,35 @@ package cat.ilg;
 
 public class Persona {
 
-    protected String dni ;
-    protected String nom ;
+    private String dni ;
+    private String nom ;
 
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
     public  void canviarNom(String nom){
-        this.nom = nom;
+        setNom(nom);
     }
 
     public void asignarDni(String dni){
         try {
-            if ( this.dni != null){
+            if ( this.getDni() != null){
                 throw new Exception("Error: Persona ya tiene dni asignado");
             } else {
-                this.dni = dni;
+                setDni(dni);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -26,13 +41,13 @@ public class Persona {
     public  String obtenirDades(){
 
         try {
-            if ( dni == null || nom ==  null ){
+            if ( getDni() == null || getNom() ==  null ){
                 throw new Exception("Error: Faltan Datos para Introducir");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
-        return "Persona amb Nom : " + nom + " i dni " + dni ;
+        return "Persona amb Nom : " + getNom() + " i dni " + getDni() ;
     }
 }

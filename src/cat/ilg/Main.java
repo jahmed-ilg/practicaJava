@@ -3,8 +3,10 @@ package cat.ilg;
 public class Main {
 
     public static void main(String[] args) {
+        System.out.println("=========================================Nom de Institut====================================");
         Institut institut = new Institut("Ins La Guineueta");
-        System.out.println("Nom de l'institut es : " + institut.nom);
+        System.out.println("Nom de l'institut es : " + institut.nom + "\n");
+
 
 
         // Professor 1
@@ -40,14 +42,13 @@ public class Main {
         estudiant2.asignarDni("84615M");
         estudiant2.posarNota(11);
         institut.afegirEstudiant(estudiant2);
-
+/*
         // Estudiant 3
         // Professor 3
         Estudiant estudiant3 = new Estudiant();
         estudiant3.asignarDni("963753n");
         estudiant3.asignarDni("741369n");
         institut.afegirEstudiant(estudiant3);
-
 
         // Professor Substitut
         ProfessorSubstitut professorSubstitut = new ProfessorSubstitut("David");
@@ -57,7 +58,7 @@ public class Main {
         institut.afegirProfeSubstitut(professorSubstitut);
 
         professorSubstitut.asignarDni("9865472N");
-
+*/
         institut.imprimirInformacio();
     }
 }
