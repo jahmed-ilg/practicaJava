@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class ProfessorSubstitut extends Professor{
 
-    String dataInici ;
-    String dataFi ;
+    Date dataInici ;
+    Date dataFi ;
 
     public ProfessorSubstitut(){};
 
@@ -13,7 +13,7 @@ public class ProfessorSubstitut extends Professor{
         setNom(nom);
     }
 
-    void asignarSubstitucio(String dataInici , String dataFi){
+    void asignarSubstitucio(Date dataInici , Date dataFi){
         this.dataInici = dataInici;
         this.dataFi = dataFi;
     }

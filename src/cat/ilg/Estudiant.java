@@ -3,7 +3,10 @@ package cat.ilg;
 public class Estudiant extends Persona{
     private double nota;
 
-    public Estudiant(){};
+    public Estudiant() {
+
+    }
+
 
     public double getNota() {
         return nota;
@@ -20,7 +23,7 @@ public class Estudiant extends Persona{
 
     public void posarNota(double nota){
         try {
-            if ( this.getNota() < 0.0 || this.getNota() > 10.0 ){
+            if ( nota < 0.0 || nota > 10.0 ){
                 throw new Exception("Error: Nota Invalida");
             } else {
                 setNota(nota);
@@ -36,10 +39,10 @@ public class Estudiant extends Persona{
     public String obtenirDades() {
         String toReturn = "";
         try {
-            if ( this.getDni() == null || this.getNom() ==  null ){
+            if ( getDni() == null || getNom() ==  null ){
                 throw new Exception("Error: Faltan Datos para Introducir");
             } else {
-                toReturn = "Persona amb Nom : " + this.getNom() + " i dni " + this.getDni() + " (ESTUDIANT amb nota : " + this.getNota() + " )";
+                toReturn = "Persona amb Nom : " + getNom() + " i dni " + getDni() + " (ESTUDIANT amb nota : " + getNota() + " )";
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

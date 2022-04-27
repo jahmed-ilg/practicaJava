@@ -1,5 +1,7 @@
 package cat.ilg;
 
+import java.util.Date;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -42,7 +44,7 @@ public class Main {
         estudiant2.asignarDni("84615M");
         estudiant2.posarNota(11);
         institut.afegirEstudiant(estudiant2);
-/*
+
         // Estudiant 3
         // Professor 3
         Estudiant estudiant3 = new Estudiant();
@@ -54,11 +56,13 @@ public class Main {
         ProfessorSubstitut professorSubstitut = new ProfessorSubstitut("David");
         professorSubstitut.asignarDni("9865741G");
         professorSubstitut.canviarSou(2.000);
-        professorSubstitut.asignarSubstitucio("01/01/2021","03/05/2022");
+        Date dataInici = new Date(2021,1,1) ;
+        Date dataFi = new Date(2022,5,3);
+        professorSubstitut.asignarSubstitucio(dataInici,dataFi);
         institut.afegirProfeSubstitut(professorSubstitut);
 
         professorSubstitut.asignarDni("9865472N");
-*/
+
         institut.imprimirInformacio();
     }
 }
