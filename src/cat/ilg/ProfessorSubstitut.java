@@ -1,11 +1,16 @@
 package cat.ilg;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ProfessorSubstitut extends Professor{
 
-    Date dataInici ;
-    Date dataFi ;
+
+    String dataInici ;
+    String dataFin ;
+
+
+
 
     public ProfessorSubstitut(){};
 
@@ -13,9 +18,9 @@ public class ProfessorSubstitut extends Professor{
         setNom(nom);
     }
 
-    void asignarSubstitucio(Date dataInici , Date dataFi){
+    void asignarSubstitucio(String dataInici , String dataFin){
         this.dataInici = dataInici;
-        this.dataFi = dataFi;
+        this.dataFin = dataFin;
     }
 
     public  String obtenirDades(){
@@ -25,7 +30,7 @@ public class ProfessorSubstitut extends Professor{
                 throw new Exception("Error: Faltan Datos para Introducir");
             } else {
                 check = "Persona amb nom : " + this.getNom() + " i DNI " + this.getDni() + " es el substitut des de  la data " + dataInici +
-                        " fins a la data " + dataFi + "  (PROFE Substitut amb sou : " + String.format("%.3f",this.getSou()) + " )";
+                        " fins a la data " + dataFin + "  (PROFE Substitut amb sou : " + String.format("%.3f",this.getSou()) + " )";
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

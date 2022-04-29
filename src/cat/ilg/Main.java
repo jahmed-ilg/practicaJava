@@ -1,5 +1,6 @@
 package cat.ilg;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Main {
@@ -56,9 +57,15 @@ public class Main {
         ProfessorSubstitut professorSubstitut = new ProfessorSubstitut("David");
         professorSubstitut.asignarDni("9865741G");
         professorSubstitut.canviarSou(2.000);
-        Date dataInici = new Date(2021,1,1) ;
-        Date dataFi = new Date(2022,5,3);
-        professorSubstitut.asignarSubstitucio(dataInici,dataFi);
+        //String dataInici = new SimpleDateFormat(new Date(2021,1,1)) ;
+        //Date dataFi = new Date(2022,5,3);
+
+        String pattern = "dd/MM/YY";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+        String dataInici = simpleDateFormat.format(new Date(2021,0,1));
+        String dataFin = simpleDateFormat.format(new Date(2022,4,3));
+        professorSubstitut.asignarSubstitucio(dataInici,dataFin);
         institut.afegirProfeSubstitut(professorSubstitut);
 
         professorSubstitut.asignarDni("9865472N");
