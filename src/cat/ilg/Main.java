@@ -60,11 +60,8 @@ public class Main {
         //String dataInici = new SimpleDateFormat(new Date(2021,1,1)) ;
         //Date dataFi = new Date(2022,5,3);
 
-        String pattern = "dd/MM/YY";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
-        String dataInici = simpleDateFormat.format(new Date(2021,0,1));
-        String dataFin = simpleDateFormat.format(new Date(2022,4,3));
+        Date dataInici = new Date(2021,01,01);
+        Date dataFin = new Date(2022,04,03);
         professorSubstitut.asignarSubstitucio(dataInici,dataFin);
         institut.afegirProfeSubstitut(professorSubstitut);
 

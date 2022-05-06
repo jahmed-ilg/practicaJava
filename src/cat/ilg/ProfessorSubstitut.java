@@ -6,8 +6,8 @@ import java.util.Date;
 public class ProfessorSubstitut extends Professor{
 
 
-    String dataInici ;
-    String dataFin ;
+    Date dataInici ;
+    Date dataFin ;
 
 
 
@@ -18,7 +18,7 @@ public class ProfessorSubstitut extends Professor{
         setNom(nom);
     }
 
-    void asignarSubstitucio(String dataInici , String dataFin){
+    void asignarSubstitucio(Date dataInici , Date dataFin){
         this.dataInici = dataInici;
         this.dataFin = dataFin;
     }
@@ -29,8 +29,10 @@ public class ProfessorSubstitut extends Professor{
             if ( this.getDni() == null || this.getNom() ==  null ){
                 throw new Exception("Error: Faltan Datos para Introducir");
             } else {
-                check = "Persona amb nom : " + this.getNom() + " i DNI " + this.getDni() + " es el substitut des de  la data " + dataInici +
-                        " fins a la data " + dataFin + "  (PROFE Substitut amb sou : " + String.format("%.3f",this.getSou()) + " )";
+                check = "Persona amb nom : " + this.getNom() + " i DNI " + this.getDni() + " es el substitut des de  la data " +
+                        this.dataInici.getDate() + '/' + this.dataInici.getMonth() + '/' + this.dataInici.getYear() +
+                        " fins a la data " + this.dataFin.getDate() + '/'  + this.dataFin.getMonth() + '/' +
+                        this.dataFin.getYear() + "  (PROFE Substitut amb sou : " + String.format("%.3f",this.getSou()) + " )";
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
