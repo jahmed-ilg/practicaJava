@@ -31,17 +31,17 @@ public class Professor extends Persona {
     }
 
     @Override
-    public  String obtenirDades(){
-        String toReturn = "";
+    public  void obtenirDades(){
         try {
             if ( this.getDni() == null || this.getNom() ==  null ){
                 throw new Exception("Error: Faltan Datos para Introducir");
             } else {
-                toReturn = "Persona amb nom : " + this.getNom() + " i DNI " + this.getDni() + " (PROFE amb sou : " + String.format("%.3f",this.sou) + " )";
+                System.out.println("Persona amb nom : " + this.getNom() + " i DNI " + this.getDni() +
+                        " (PROFE amb sou : " + String.format("%.3f",this.sou) + " )");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return toReturn ;
+
     }
 }

@@ -37,13 +37,15 @@ public class Main {
         Estudiant estudiant1 = new Estudiant();
         estudiant1.canviarNom("Joan");
         estudiant1.asignarDni("8466N");
-        estudiant1.posarNota(7.7);
+        estudiant1.posarNota("Mates",7.7);
+        estudiant1.posarNota("Catalan",9);
         institut.afegirPersona(estudiant1);
 
         // Estudiant 2
         Estudiant estudiant2 = new Estudiant("Pepe");
         estudiant2.asignarDni("84615M");
-        estudiant2.posarNota(11);
+        estudiant2.posarNota("Mates",11);
+        estudiant2.posarNota("Catalan",8);
         institut.afegirPersona(estudiant2);
 
         // Estudiant 3
@@ -52,6 +54,7 @@ public class Main {
         estudiant3.asignarDni("963753n");
         estudiant3.asignarDni("741369n");
         institut.afegirPersona(estudiant3);
+
 
         // Professor Substitut
         ProfessorSubstitut professorSubstitut = new ProfessorSubstitut("David");

@@ -23,20 +23,18 @@ public class ProfessorSubstitut extends Professor{
         this.dataFin = dataFin;
     }
 
-    public  String obtenirDades(){
-        String check = "";
+    public  void obtenirDades(){
         try {
             if ( this.getDni() == null || this.getNom() ==  null ){
                 throw new Exception("Error: Faltan Datos para Introducir");
             } else {
-                check = "Persona amb nom : " + this.getNom() + " i DNI " + this.getDni() + " es el substitut des de  la data " +
+                System.out.println("Persona amb nom : " + this.getNom() + " i DNI " + this.getDni() + " es el substitut des de  la data " +
                         this.dataInici.getDate() + '/' + this.dataInici.getMonth() + '/' + this.dataInici.getYear() +
                         " fins a la data " + this.dataFin.getDate() + '/'  + this.dataFin.getMonth() + '/' +
-                        this.dataFin.getYear() + "  (PROFE Substitut amb sou : " + String.format("%.3f",this.getSou()) + " )";
+                        this.dataFin.getYear() + "  (PROFE Substitut amb sou : " + String.format("%.3f",this.getSou()) + " )");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return check ;
     }
 }

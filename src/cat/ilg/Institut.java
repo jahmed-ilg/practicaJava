@@ -20,7 +20,7 @@ public class Institut {
     public void imprimirInformacio(){
         System.out.println("=======================================Personas===========================================");
         for (Persona persona : personas) {
-            System.out.println(persona.obtenirDades());
+            persona.obtenirDades();
         }
     }
 }

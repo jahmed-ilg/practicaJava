@@ -38,7 +38,7 @@ public class Persona {
 
     }
 
-    public  String obtenirDades(){
+    public  void obtenirDades(){
 
         try {
             if ( getDni() == null || getNom() ==  null ){
@@ -48,6 +48,6 @@ public class Persona {
             System.out.println(e.getMessage());
         }
 
-        return "Persona amb Nom : " + getNom() + " i dni " + getDni() ;
+        System.out.println("Persona amb Nom : " + getNom() + " i dni " + getDni()) ;
     }
 }
